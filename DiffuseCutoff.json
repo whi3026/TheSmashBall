@@ -1,0 +1,29 @@
+{
+  "name": "DiffuseCutoff",
+  "comments": "Calculate diffuse cutoff based on light direction and normal.",
+  "target": "Neutral",
+  "inParameters": [
+    {
+      "name": "lightDirection",
+      "type": "Vector3"
+    },
+    {
+      "name": "normal",
+      "type": "Vector3"
+    }
+  ],
+  "outParameters": [
+    {
+      "name": "diffuseCutoff",
+      "type": "Float"
+    }
+  ],
+  "functionName": "diffuseCutoff",
+  "code": [
+    "float diffuseCutoff(vec3 lightDirection, vec3 normal) {",
+    "    // 빛의 방향과 법선의 내적을 계산하여 diffuse cutoff을 얻음",
+    "    float diffuseCutoff = max(dot(lightDirection, normal), 0.0);",
+    "    return diffuseCutoff;",
+    "}"
+  ]
+}

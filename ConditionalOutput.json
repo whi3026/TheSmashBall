@@ -1,0 +1,29 @@
+{
+  "name": "GetLightDirection",
+  "comments": "Get the direction of the light for diffuse cutoff.",
+  "target": "Neutral",
+  "inParameters": [
+    {
+      "name": "lightPosition",
+      "type": "Vector3"
+    },
+    {
+      "name": "surfacePosition",
+      "type": "Vector3"
+    }
+  ],
+  "outParameters": [
+    {
+      "name": "lightDirection",
+      "type": "Vector3"
+    }
+  ],
+  "functionName": "getLightDirection",
+  "code": [
+    "vec3 getLightDirection(vec3 lightPosition, vec3 surfacePosition) {",
+    "    // 빛의 위치와 표면의 위치를 빼서 빛의 방향을 계산",
+    "    vec3 lightDirection = normalize(lightPosition - surfacePosition);",
+    "    return lightDirection;",
+    "}"
+  ]
+}
